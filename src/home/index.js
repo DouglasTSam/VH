@@ -16,7 +16,7 @@ function Home() {
     setParagraph(text[0].outerText);
   }, []);
 
-  function downloading(){
+  function downloading() {
     alert("Baixando o edital");
   }
 
@@ -28,10 +28,7 @@ function Home() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="topContainer">
-              <section className="subscription" class="col-md-12">
-                {" "}
-                {/*adicionado o grid de bootstrap para medium display,
-              mas não está pegando estilização */}
+              <section className="subscription">
                 <h3>captação 2021.2</h3>
                 <h1>Formas de Ingresso</h1>
                 <div className="infoText">
@@ -73,10 +70,12 @@ function Home() {
                   </button>
                 </div>
               </section>
-              <div className="woman .d-none .d-sm-none .d-md-none .d-lg-block .d-xl-block">
-                {/* "Display none" não funcionou no código, era pra sumir com a imagem,quando a tela fosse menor que uma tela large (920px)
-               não consegui resolver. */}
-                <img src={woman} alt="woman" />
+              <div className="woman d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                <div>
+                  {/* 
+                {/*adicionado o grid de bootstrap para fazer a responsividade, o display none, foi usado para que a imagem só seja visível para telas grande e extras grandes*/}
+                  <img src={woman} alt="woman" />
+                </div>
               </div>
             </div>
           </div>
@@ -84,13 +83,15 @@ function Home() {
         <div class="container">
           <div class="row justify-content-center">
             <section className="footer col-md-12" id="footer">
-              <div className="imageFooter" id="imageFooter">
+              <div
+                className="imageFooter d-none d-sm-none d-md-none d-lg-block d-xl-block"
+                id="imageFooter"
+              >
                 <img className="doll" src={doll} alt="studant"></img>
               </div>
               <div className="listContainer">
                 <h1>Cursos Graduação</h1>
                 <div className="listDivider">
-                  {/* Foi utilizado css Grid, para poder divir em duas colunas */}
                   <div className="leftList">
                     <ul className="gridContainer">
                       <li className="gridItem">Administração</li>
@@ -121,7 +122,7 @@ function Home() {
           </div>
         </div>
       </div>
-      {/*usando ternário para poder fazer a validação da ação do botão para o modal */}
+      {/*foi usado o ternário para poder fazer a validação da ação do botão para o modal */}
       {isVisible ? (
         <ModalRegister
           isVisible={isVisible}
